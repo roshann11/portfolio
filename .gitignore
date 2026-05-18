@@ -27,5 +27,3 @@ dist-ssr
 backup/
 .env
 ._*
-
-src/components
