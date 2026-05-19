@@ -27,7 +27,7 @@ const textures = imageUrls.map((url) => textureLoader.load(url));
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
 
 const spheres = [...Array(30)].map(() => ({
-  scale: [0.7, 1, 0.8, 1, 1][Math.floor(Math.random() * 5)],
+  scale: [0.5, 0.75, 0.6, 0.75, 0.75][Math.floor(Math.random() * 5)],
 }));
 
 type SphereProps = {
@@ -50,8 +50,9 @@ function SphereGeo({
   useFrame((_state, delta) => {
     if (!isActive) return;
     delta = Math.min(0.1, delta);
+    const t = api.current!.translation();
     const impulse = vec
-      .copy(api.current!.translation())
+      .set(t.x, t.y + 2, t.z)
       .normalize()
       .multiply(
         new THREE.Vector3(
@@ -69,7 +70,7 @@ function SphereGeo({
       linearDamping={0.75}
       angularDamping={0.15}
       friction={0.2}
-      position={[r(20), r(20) - 25, r(20) - 10]}
+      position={[r(20), r(20) - 10, r(20) - 10]}
       ref={api}
       colliders={false}
     >

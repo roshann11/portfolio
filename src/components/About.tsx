@@ -14,7 +14,7 @@ const About = () => {
         <p className="para">
           In my free time, I enjoy working on personal projects, contributing
           to open source, and staying up-to-date with the latest trends in
-          web development.
+          web development
           full-stack products end to end.
         </p>
       </div>
