@@ -138,7 +138,7 @@ export function setAllTimeline() {
       trigger: ".career-section",
       start: "top 30%",
       end: "100% center",
-      scrub: true,
+      scrub: 1,
       invalidateOnRefresh: true,
     },
   });
@@ -147,20 +147,20 @@ export function setAllTimeline() {
       ".career-timeline",
       { maxHeight: "10%" },
       { maxHeight: "100%", duration: 0.5 },
-      0
+      0.4
     )
 
     .fromTo(
       ".career-timeline",
       { opacity: 0 },
       { opacity: 1, duration: 0.1 },
-      0
+      0.4
     )
     .fromTo(
       ".career-info-box",
       { opacity: 0 },
       { opacity: 1, stagger: 0.1, duration: 0.5 },
-      0
+      0.4
     )
     .fromTo(
       ".career-dot",
@@ -170,21 +170,21 @@ export function setAllTimeline() {
         delay: 0.3,
         duration: 0.1,
       },
-      0
+      0.4
     );
 
   if (window.innerWidth > 1024) {
     careerTimeline.fromTo(
       ".career-section",
       { y: 0 },
-      { y: "20%", duration: 0.5, delay: 0.2 },
+      { y: "5%", duration: 0.5, delay: 0.4 },
       0
     );
   } else {
     careerTimeline.fromTo(
       ".career-section",
       { y: 0 },
-      { y: 0, duration: 0.5, delay: 0.2 },
+      { y: 0, duration: 0.5, delay: 0.4 },
       0
     );
   }
